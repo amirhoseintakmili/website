@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Hosein Takmili | Personal Website</title>
+    
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        @font-face {
+            font-family: 'BatmanForever';
+            src: url('batman.ttf') format('truetype');
+        }
+
+        body {
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #050505;
+            
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px; /* عرض بیشتر نسبت به لینکدونی برای خوانایی متن */
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* عکس پروفایل */
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 4px; /* فاصله عکس تا حاشیه */
+            margin-bottom: 20px;
+            object-fit: cover;
+            background-color: #000;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* لوگو (نام) */
+        .brand-title {
+            font-family: 'BatmanForever', sans-serif;
+            font-size: 2rem; 
+            margin: 0;
+            line-height: 1.4;
+            color: transparent; 
+            -webkit-text-stroke: 1px white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            direction: ltr; /* اسم انگلیسی چپ‌چین باشه */
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: #ccc;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           باکس‌های محتوا (شبیه دکمه‌ها اما ثابت)
+        ========================================= */
+        .content-box {
+            background: rgba(0, 0, 0, 0.65); 
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            text-align: right; /* متن فارسی راست‌چین */
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .content-box h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-box p {
+            color: #ddd;
+            font-size: 0.95rem;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* استایل مهارت‌ها (تگ‌های کوچک) */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #eee;
+        }
+
+        /* =========================================
+           دکمه‌های تماس (همون استایل قبلی)
+        ========================================= */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            position: relative;
+            background: rgba(0, 0, 0, 0.65); 
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border-radius: 8px; 
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            direction: ltr; /* دکمه‌ها چپ‌چین (چون انگلیسی‌ان) */
+        }
+
+        .btn:hover {
+            background: #fff; 
+            color: #000;
+            border-color: #fff; 
+            transform: translateY(-2px);
+        }
+        
+        .btn:hover i { color: #000; }
+
+        .btn i {
+            font-size: 1.2rem;
+            position: absolute;
+            left: 20px;
+            color: #fff;
+            transition: color 0.2s;
+        }
+
+        /* دکمه دانلود رزومه (متمایز) */
+        .resume-btn {
+            background: #ffffff;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            margin-top: 10px;
+        }
+        .resume-btn i { color: #000; }
+        
+        .resume-btn:hover {
+            background: #e0e0e0;
+            transform: scale(1.02);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <img src="profile.jpg" alt="Amir Hosein" class="profile-pic" onerror="this.style.display='none'"> 
+        
+        <h1 class="brand-title">
+            AMIR HOSEIN<br>TAKMILI
+        </h1>
+        
+        <p class="tagline">
+            توسعه‌دهنده وب | تولیدکننده محتوا | استریمر
+        </p>
+
+        <div class="content-box">
+            <h2><i class="fas fa-user-astronaut"></i> درباره من</h2>
+            <p>
+                سلام! من امیرحسین هستم. عاشق تکنولوژی، گیم و دنیای استریم. 
+                اینجا پایگاه شخصی منه که توش پروژه‌ها و مسیر حرفه‌ایم رو به اشتراک می‌ذارم. 
+                همیشه دنبال یادگیری چیزهای جدید و خلق محتوای باکیفیت برای کامیونیتی فارسی هستم.
+            </p>
+        </div>
+
+        <div class="content-box">
+            <h2><i class="fas fa-laptop-code"></i> مهارت‌ها</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Web Design</span>
+                <span class="skill-tag">Content Creation</span>
+                <span class="skill-tag">Streaming</span>
+                <span class="skill-tag">Editing</span>
+                <span class="skill-tag">Gaming</span>
+                <span class="skill-tag">Social Media</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; width: 100%;">
+            <h3 style="color: #888; font-size: 0.9rem; margin-bottom: 20px;">ارتباط با من</h3>
+            
+            <a href="#" class="btn resume-btn">
+                <i class="fas fa-file-download"></i>
+                <span>دانلود رزومه (PDF)</span>
+            </a>
+
+            <a href="https://instagram.com/amir.hosein.takmili" class="btn" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+
+            <a href="mailto:email@example.com" class="btn" target="_blank">
+                <i class="fas fa-envelope"></i>
+                <span>Email Me</span>
+            </a>
+
+            <a href="#" class="btn" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="#" class="btn" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+
+        <footer>
+            © 2024 Amir Hosein Takmili
+        </footer>
+    </div>
+
+</body>
+</html>
