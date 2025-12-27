@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Hosein Takmili | Personal Website</title>
+    <title>رزومه امیرحسین تکمیلی</title>
     
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -14,260 +14,424 @@
             src: url('batman.ttf') format('truetype');
         }
 
+        :root {
+            /* متغیرهای رنگی حالت نمایش (مانیتور) */
+            --bg-color: #050505;
+            --text-color: #ffffff;
+            --box-bg: rgba(20, 20, 20, 0.7);
+            --border-color: rgba(255, 255, 255, 0.25);
+            --accent-color: #ffffff;
+        }
+
+        /* استایل کلی صفحه */
         body {
+            background-color: var(--bg-color);
             background-image: url('bg.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-color: #050505;
-            
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
+            color: var(--text-color);
             font-family: 'Vazirmatn', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            line-height: 1.7;
+            margin: 0;
+            padding: 40px 0;
+            line-height: 1.8;
         }
 
         .container {
-            width: 90%;
-            max-width: 600px;
-            padding: 60px 20px;
+            max-width: 800px; /* عرض استاندارد */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- هدر و مشخصات --- */
+        header {
             text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
         }
 
-        /* عکس پروفایل */
         .profile-pic {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            padding: 4px;
-            margin-bottom: 20px;
+            border: 3px solid var(--accent-color);
             object-fit: cover;
-            background-color: #111;
-            box-shadow: 0 0 25px rgba(0,0,0,0.6);
-        }
-
-        /* نام (برند) */
-        .brand-title {
-            font-family: 'BatmanForever', sans-serif;
-            font-size: 2rem; 
-            margin: 0;
-            line-height: 1.4;
-            color: transparent; 
-            -webkit-text-stroke: 1px white;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            text-transform: uppercase;
-            direction: ltr; 
-        }
-
-        .tagline {
-            font-size: 0.9rem;
-            color: #ccc;
-            margin-top: 15px;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-
-        /* جداکننده بین عناوین */
-        .sep { margin: 0 8px; color: #555; font-size: 0.8em; }
-
-        /* باکس‌های محتوا (شیشه ای تاریک) */
-        .content-box {
-            background: rgba(0, 0, 0, 0.7); 
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            text-align: right; 
-            backdrop-filter: blur(8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-        }
-
-        .content-box h2 {
-            margin-top: 0;
             margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .name {
+            font-family: 'BatmanForever', sans-serif;
+            font-size: 2.2rem;
+            margin: 10px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px white;
+            color: transparent; /* توخالی برای دارک مود */
+            direction: ltr;
+        }
+
+        .job-title {
             font-size: 1.1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #ccc;
+            margin-bottom: 15px;
+            font-weight: 500;
+            direction: ltr;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+            direction: ltr;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- بخش‌های اصلی --- */
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
-            color: #fff;
+            margin-top: 40px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
-        .content-box h2 i { color: #ddd; }
 
-        .content-box p {
-            color: #e0e0e0;
+        /* --- باکس‌های تجربه کاری --- */
+        .job-item {
+            background: var(--box-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+            page-break-inside: avoid; /* جلوگیری از نصف شدن در پرینت */
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .job-role {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .job-company {
+            color: #ccc;
             font-size: 0.95rem;
-            margin: 0;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .job-desc {
+            font-size: 0.95rem;
+            color: #ddd;
             text-align: justify;
         }
 
-        /* استایل تگ‌های مهارت */
-        .skills-container {
+        /* --- مهارت‌ها --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* دو ستون */
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: var(--box-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 10px;
+            page-break-inside: avoid;
+        }
+
+        .skill-cat-title {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
 
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 6px 14px;
-            border-radius: 6px;
+        .tag {
             font-size: 0.85rem;
-            color: #fff;
-            transition: 0.3s;
-        }
-        
-        .skill-tag:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: #fff;
+            background: rgba(255,255,255,0.15);
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: #eee;
         }
 
-        /* دکمه‌ها */
-        .btn {
+        /* --- دکمه پرینت (شناور) --- */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+            z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: center; 
-            position: relative;
-            background: rgba(15, 15, 15, 0.8); 
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #fff;
-            text-decoration: none;
-            padding: 16px 20px;
-            margin-bottom: 12px;
-            border-radius: 8px; 
-            font-weight: 500;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-            direction: ltr; 
+            gap: 10px;
+            transition: transform 0.2s;
+            font-family: 'Vazirmatn', sans-serif;
         }
+        .print-btn:hover { transform: scale(1.05); }
 
-        .btn:hover {
-            background: #fff; 
-            color: #000;
-            border-color: #fff; 
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255,255,255,0.15);
-        }
-        
-        .btn:hover i { color: #000; }
+        /* ============================================================
+           تنظیمات مخصوص چاپ (Print Styles)
+           این بخش جادو می‌کند! وقتی Ctrl+P بزنی این‌ها فعال می‌شوند.
+        ============================================================ */
+        @media print {
+            /* حذف دکمه پرینت در کاغذ */
+            .print-btn { display: none !important; }
 
-        .btn i {
-            font-size: 1.2rem;
-            position: absolute;
-            left: 20px;
-            color: #fff;
-            transition: color 0.2s;
-        }
+            body {
+                background-color: #ffffff !important;
+                background-image: none !important; /* حذف عکس پس‌زمینه */
+                color: #000000 !important; /* متن مشکی */
+                padding: 0 !important;
+                margin: 0 !important;
+            }
 
-        /* دکمه ویژه (Call to Action) */
-        .cta-btn {
-            background: #ffffff;
-            color: #000;
-            font-weight: 800;
-            border: none;
-            margin-top: 10px;
-            margin-bottom: 25px;
-        }
-        .cta-btn i { color: #000; }
-        
-        .cta-btn:hover {
-            background: #e6e6e6;
-            transform: scale(1.02);
-            box-shadow: 0 0 20px rgba(255,255,255,0.4);
-        }
+            .container {
+                max-width: 100% !important;
+                padding: 0 10mm !important; /* حاشیه استاندارد کاغذ */
+                box-shadow: none !important;
+            }
 
-        footer {
-            margin-top: 50px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.3);
-            direction: ltr;
+            /* تغییر رنگ هدر */
+            header { border-bottom-color: #000 !important; }
+            
+            .name {
+                color: #000 !important; /* اسم مشکی توپر */
+                -webkit-text-stroke: 0 !important;
+                text-shadow: none !important;
+            }
+            
+            .job-title { color: #444 !important; }
+            .contact-info { color: #333 !important; }
+
+            /* تغییر رنگ باکس‌ها به سفید */
+            .job-item, .skill-category {
+                background: #ffffff !important;
+                border: 1px solid #ccc !important;
+                color: #000 !important;
+                box-shadow: none !important;
+                break-inside: avoid; /* جلوگیری از شکستن وسط صفحه */
+            }
+
+            .section-title {
+                color: #000 !important;
+                border-bottom-color: #000 !important;
+            }
+
+            .job-role { color: #000 !important; }
+            .job-company { color: #444 !important; }
+            .job-desc { color: #000 !important; }
+            
+            .job-date {
+                background: #eee !important;
+                color: #000 !important;
+                border: 1px solid #ccc;
+            }
+
+            .skill-cat-title {
+                color: #000 !important;
+                border-bottom-color: #ccc !important;
+            }
+
+            .tag {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                border: 1px solid #ccc;
+            }
+
+            /* عکس پروفایل */
+            .profile-pic {
+                border-color: #000 !important;
+                box-shadow: none !important;
+            }
         }
     </style>
 </head>
 <body>
 
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-file-download"></i> دانلود و پرینت رزومه
+    </button>
+
     <div class="container">
         
-        <img src="profile.jpg" alt="Amir Hosein Takmili" class="profile-pic" onerror="this.style.display='none'"> 
-        
-        <h1 class="brand-title">
-            AMIR HOSEIN<br>TAKMILI
-        </h1>
-        
-        <p class="tagline">
-            مدیر مارکتینگ <span class="sep">|</span> کارشناس تولید محتوا <span class="sep">|</span> استریمر
-        </p>
-
-        <div class="content-box">
-            <h2><i class="fas fa-user-tie"></i> درباره من</h2>
-            <p>
-                من امیرحسین تکمیلی هستم؛ فارغ‌التحصیل رشته هنر ارتباط تصویری و متخصص در حوزه مارکتینگ و مدیا. 
-                با سابقه مدیریت مارکتینگ در شرکت‌های معتبر و تجربه گسترده در تولید محتوای ویدیویی، سناریو‌نویسی و استراتژی محتوا.
-                تلاش من همیشه ترکیب خلاقیت هنری با اهداف تجاری بوده است.
-            </p>
-        </div>
-
-        <div class="content-box">
-            <h2><i class="fas fa-layer-group"></i> تخصص‌ها</h2>
-            <div class="skills-container">
-                <span class="skill-tag">مدیریت مارکتینگ</span>
-                <span class="skill-tag">Adobe Premiere</span>
-                <span class="skill-tag">After Effects</span>
-                <span class="skill-tag">Photoshop & Illustrator</span>
-                <span class="skill-tag">تصویربرداری و نورپردازی</span>
-                <span class="skill-tag">هدایت هلی‌شات</span>
-                <span class="skill-tag">تدوین حرفه‌ای</span>
-                <span class="skill-tag">Social Media Strategy</span>
+        <header>
+            <img src="profile.jpg" alt="Amir Hosein" class="profile-pic" onerror="this.style.display='none'">
+            <h1 class="name">AMIR HOSEIN TAKMILI</h1>
+            <div class="job-title">Multimedia Artist | AI Specialist | Marketing Strategist</div>
+            
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> amir.hosein.takmili@gmail.com</span>
+                <span><i class="fas fa-phone"></i> 09103581682</span>
+                <span><i class="fas fa-map-marker-alt"></i> Isfahan, Iran</span>
             </div>
-        </div>
+        </header>
 
-        <div style="margin-top: 30px; width: 100%;">
-            
-            <a href="resume.pdf" class="btn cta-btn" download>
-                <i class="fas fa-file-pdf"></i>
-                <span>دانلود رزومه کامل (PDF)</span>
-            </a>
+        <section>
+            <div class="section-title"><i class="fas fa-user-circle"></i> خلاصه حرفه‌ای</div>
+            <p style="text-align: justify; padding: 0 10px;">
+                متخصص تولید محتوا و آرتیست مولتی‌مدیا با تمرکز ویژه بر **هوش مصنوعی و اتوماسیون**. 
+                مسلط به ابزارهای پیشرفته هوش مصنوعی برای بهینه‌سازی فرآیندهای تولید محتوا، مدل‌سازی سه‌بعدی و تدوین. 
+                توانمند در تلفیق هنر، تکنولوژی و استراتژی مارکتینگ برای خلق آثار بصری نوآورانه و افزایش بهره‌وری پروژه‌ها.
+            </p>
+        </section>
 
-            <a href="mailto:amir.hosein.takmili.2022@gmail.com" class="btn" target="_blank">
-                <i class="fas fa-envelope"></i>
-                <span>Email Me</span>
-            </a>
+        <section>
+            <div class="section-title"><i class="fas fa-briefcase"></i> سوابق شغلی</div>
 
-            <a href="tel:09103581682" class="btn" target="_blank">
-                <i class="fas fa-phone"></i>
-                <span>Call Me</span>
-            </a>
+            <div class="job-item">
+                <div class="job-header">
+                    <div>
+                        <span class="job-role">کارشناس ارشد محتوا و 3D Artist</span>
+                        <span class="job-company">مجموعه ریژه (Rije)</span>
+                    </div>
+                    <span class="job-date">در حال همکاری</span>
+                </div>
+                <div class="job-desc">
+                    مسئولیت مدل‌سازی سه‌بعدی و تدوین حرفه‌ای با بهره‌گیری از ابزارهای هوش مصنوعی برای افزایش سرعت و کیفیت خروجی‌ها.
+                </div>
+            </div>
 
-            <a href="https://instagram.com/amir.hosein.takmili" class="btn" target="_blank">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
+            <div class="job-item">
+                <div class="job-header">
+                    <div>
+                        <span class="job-role">فریلنسر (Freelancer)</span>
+                        <span class="job-company">پروژه‌های شخصی و کارفرمایی</span>
+                    </div>
+                    <span class="job-date">۲۰۲۰ - تاکنون</span>
+                </div>
+                <div class="job-desc">
+                    اجرای پروژه‌های مدل‌سازی با ZBrush و Blender، ساخت تیزرهای تبلیغاتی، و پیاده‌سازی اتوماسیون‌های هوشمند در تولید محتوا.
+                </div>
+            </div>
 
-            <a href="#" class="btn" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-            </a>
-            
-            <a href="https://social.starkxstream.ir" class="btn" target="_blank">
-                <i class="fas fa-gamepad"></i>
-                <span>My Gaming Hub (StarkX)</span>
-            </a>
+            <div class="job-item">
+                <div class="job-header">
+                    <div>
+                        <span class="job-role">مدیر مارکتینگ</span>
+                        <span class="job-company">هوشمند تجارت رهنما</span>
+                    </div>
+                    <span class="job-date">۱۴۰۲ - ۱۴۰۳</span>
+                </div>
+                <div class="job-desc">
+                    برنامه‌ریزی استراتژیک، مدیریت کمپین‌های تبلیغاتی و نظارت بر تیم تولید محتوا.
+                </div>
+            </div>
+        </section>
 
-        </div>
+        <section>
+            <div class="section-title"><i class="fas fa-tools"></i> مهارت‌ها و تخصص‌ها</div>
+            <div class="skills-grid">
+                
+                <div class="skill-category">
+                    <div class="skill-cat-title" style="color: #4facfe;">هوش مصنوعی و اتوماسیون</div>
+                    <div class="skill-tags">
+                        <span class="tag">AI Tools Specialist</span>
+                        <span class="tag">AI Automation</span>
+                        <span class="tag">Generative AI</span>
+                        <span class="tag">Workflow Optimization</span>
+                    </div>
+                </div>
 
-        <footer>
-            © 2025 Amir Hosein Takmili
-        </footer>
+                <div class="skill-category">
+                    <div class="skill-cat-title">مدل‌سازی و سه‌بعدی</div>
+                    <div class="skill-tags">
+                        <span class="tag">Blender</span>
+                        <span class="tag">ZBrush</span>
+                        <span class="tag">Sculpting</span>
+                        <span class="tag">Character Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-cat-title">تدوین و ویدیو</div>
+                    <div class="skill-tags">
+                        <span class="tag">DaVinci Resolve</span>
+                        <span class="tag">Adobe Premiere</span>
+                        <span class="tag">After Effects</span>
+                        <span class="tag">Color Grading</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-cat-title">گرافیک و مارکتینگ</div>
+                    <div class="skill-tags">
+                        <span class="tag">Photoshop</span>
+                        <span class="tag">Illustrator</span>
+                        <span class="tag">Digital Marketing</span>
+                        <span class="tag">Content Strategy</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-cat-title">سایر مهارت‌ها</div>
+                    <div class="skill-tags">
+                        <span class="tag">Cubase (Audio)</span>
+                        <span class="tag">Drone Pilot</span>
+                        <span class="tag">Lighting</span>
+                        <span class="tag">Team Leadership</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title"><i class="fas fa-graduation-cap"></i> تحصیلات</div>
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="job-role">کارشناسی ارتباط تصویری (Visual Communication)</span>
+                    <span class="job-date">دانشگاه آزاد نجف‌آباد</span>
+                </div>
+            </div>
+        </section>
+
     </div>
 
 </body>
